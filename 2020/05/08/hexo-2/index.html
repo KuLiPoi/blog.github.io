@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>为Gitpage自定义域名和优化 | 不会理发的托尼老师</title><meta name="description" content="想给自己的Gitpage自定义域名吗？ 用Github仓库做图床？ 自定义域名 在hexo根目录的_config.yml中我们先修改 url: yourdomain.com  在Source文件夹内新建文件名为 CNAME 的文件，并将内容修改为你的域名，如 nana.im  然后在Github你的仓库的Setting中拉到最下面有个 Github pages，填写你的自定义域名 点击 Save"><meta name="author" content="Tony"><meta name="copyright" content="Tony"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="为Gitpage自定义域名和优化"><meta name="twitter:description" content="想给自己的Gitpage自定义域名吗？ 用Github仓库做图床？ 自定义域名 在hexo根目录的_config.yml中我们先修改 url: yourdomain.com  在Source文件夹内新建文件名为 CNAME 的文件，并将内容修改为你的域名，如 nana.im  然后在Github你的仓库的Setting中拉到最下面有个 Github pages，填写你的自定义域名 点击 Save"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/4.jpg"><meta property="og:type" content="article"><meta property="og:title" content="为Gitpage自定义域名和优化"><meta property="og:url" content="https://nana.im/2020/05/08/hexo-2/"><meta property="og:site_name" content="不会理发的托尼老师"><meta property="og:description" content="想给自己的Gitpage自定义域名吗？ 用Github仓库做图床？ 自定义域名 在hexo根目录的_config.yml中我们先修改 url: yourdomain.com  在Source文件夹内新建文件名为 CNAME 的文件，并将内容修改为你的域名，如 nana.im  然后在Github你的仓库的Setting中拉到最下面有个 Github pages，填写你的自定义域名 点击 Save"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/4.jpg"><meta property="article:published_time" content="2020-05-08T04:24:00.000Z"><meta property="article:modified_time" content="2020-05-08T04:36:06.000Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://nana.im/2020/05/08/hexo-2/"><link rel="prev" title="一次迁移Minecraft服务器至Centos的记录" href="https://nana.im/2020/05/12/centos/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-166342812-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.4.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-pencil"></i><span> 留言板</span></a></div></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/4.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">不会理发的托尼老师</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-pencil"></i><span> 留言板</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">为Gitpage自定义域名和优化</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-05-08 12:24:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-05-08</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-05-08 12:36:06"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-05-08</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>想给自己的Gitpage自定义域名吗？</p>
+<p>用Github仓库做图床？</p>
+<h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ul>
+<li><p>在hexo根目录的_config.yml中我们先修改 <code>url: yourdomain.com</code></p>
+</li>
+<li><p>在Source文件夹内新建文件名为 CNAME 的文件，并将内容修改为你的域名，如 nana.im</p>
+</li>
+<li><p>然后在Github你的仓库的Setting中拉到最下面有个 Github pages，填写你的自定义域名 点击 Save</p>
+</li>
+<li><p>在自己的域名控制台下，修改解析记录。<br>提示：A记录修改为「185.199.108.153  185.199.109.153  185.199.110.153  185.199.111.153」任意一个均可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@    A   185.199.108.153</span><br><span class="line">www CNAME &lt;username.github.io&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>在上面的Setting中开启 Enforce HTTPS 选项，等待Github给你发布证书</p>
+</li>
+<li><p>最后看到 Your site is published at &lt;yourdomain.com&gt; 就成功了</p>
+</li>
+</ul>
+<h3 id="加速图片访问"><a href="#加速图片访问" class="headerlink" title="加速图片访问"></a>加速图片访问</h3><p>根据我的观察，发现图片是拖慢国内地区访问gitpage的重要原因，于是我采取了 图片压缩+jsdeliver 的办法。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com/" title="jsDelivr">jsDelivr</a> 是一个免费、开放原始码的公有 CDN 服务，托管了许多大大小小的 JavaScript、CSS 等 libraries，除了在内容部分有相当高的完整性，jsDelivr 跟其他同类型服务还有什么不同之处呢？</p>
+<p>jsDelivr 将重心放在更快速的网路连线，利用 CDN 技术来确保每个地区的使用者都能获得最好的连线速度。依据 jsDelivr 的说明，它们也是首个「打通中国大陆与海外的免费 CDN 服务」，网页开发者无须担心GFW问题而影响连线（不会像之前中国大陆无法使用 <a target="_blank" rel="noopener" href="https://developers.google.com/speed/libraries/" title="Google Hosted Libaries ">Google Hosted Libaries </a> 必须用 <a target="_blank" rel="noopener" href="https://free.com.tw/libs-useso-com/" title="libs.useso.com">libs.useso.com</a> 替代）。</p>
+<p>此外，jsDelivr 可将不同的 JavaScript 或 CSS libraries 整合在一起，透过一段链结来载入网站，非常方便！如果你正在寻找类似服务，jsDelivr 是个不错的选择。</p>
+<ul>
+<li>在Github上新建一个仓库名字随便你咯</li>
+<li>使用<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">Picgo</a>将图片上传到指定仓「关于如何使用Picgo这里不再赘述<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A">官方文档</a>说的很详细啦」<br>我只说一下 最后一个选项 设定自定义域名 我们需要填写 <code>https://cdn.jsdelivr.net/gh/&lt;username&gt;/&lt;你刚才建的仓库名&gt;@master</code></li>
+<li>我一般会选择将图片进行压缩然后在进行上传，我选用的是<a target="_blank" rel="noopener" href="https://www.picdiet.com/zh-cn">Picdiet</a>，一般压个百分之40就可以了</li>
+<li>最后将能用到的所有图片都进行上面的操作就可以了</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>网上看到有些网友说，可以Cloudflare来加速，但是我想说…. 针对国内情况来说用Cloudflare真的算是….加速吗？</li>
+<li>关于Jsdelivr的介绍选自<a target="_blank" rel="noopener" href="https://free.com.tw/jsdelivr/">免費資源網路社群</a></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Tony</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nana.im/2020/05/08/hexo-2/">https://nana.im/2020/05/08/hexo-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nana.im" target="_blank">不会理发的托尼老师</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/05/12/centos/"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/kulipoi/CDN@master/img/centos.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">一次迁移Minecraft服务器至Centos的记录</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><script id="utterances_comment" src="https://utteranc.es/client.js" repo="kulipoi/comment" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script><script>var themeNow = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+document.getElementById('utterances_comment').setAttribute('theme',themeNow)
+
+function utterancesTheme () {
+var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+const message = {
+  type: 'set-theme',
+  theme: theme
+};
+const iframe = document.querySelector('.utterances-frame');
+iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+}</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Tony</div><div class="framework-info"><span>驱动 </span><a target="_blank" rel="noopener" href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script></body></html>
