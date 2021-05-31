@@ -1,120 +1,191 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>不会理发的托尼老师</title><meta name="description"><meta name="author" content="Tony"><meta name="copyright" content="Tony"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="不会理发的托尼老师"><meta name="twitter:description"><meta name="twitter:image" content="https://cdn.kulipoi.com/img/3.jpg"><meta property="og:type" content="website"><meta property="og:title" content="不会理发的托尼老师"><meta property="og:url" content="https://nana.im/"><meta property="og:site_name" content="不会理发的托尼老师"><meta property="og:description"><meta property="og:image" content="https://cdn.kulipoi.com/img/3.jpg"><meta property="article:published_time" content="2021-05-30T17:17:45.305Z"><meta property="article:modified_time" content="2021-05-30T17:17:45.305Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
-var t = Cookies.get("theme")
-if (autoChangeMode == '1'){
-  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-  if (t === undefined){
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport){
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour < 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-  }
-  } else if (t == 'light') activateLightMode()
-  else activateDarkMode()
-
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
-
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://nana.im/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-166342812-1', 'auto');
-ga('send', 'pageview');
-</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>不会理发的托尼老师</title><meta name="author" content="Tony"><meta name="copyright" content="Tony"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="不会理发的托尼老师">
+<meta property="og:url" content="https://kulipoi.com/index.html">
+<meta property="og:site_name" content="不会理发的托尼老师">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.kulipoi.com/img/3.jpg">
+<meta property="article:author" content="Tony">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.kulipoi.com/img/3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://kulipoi.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"这篇文章已经发表了","messageNext":"天了，其中某些内容可能已经过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
     noSupport: '浏览器不支持'
   },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
+  relativeDate: {
+    homepage: false,
+    post: false
   },
-  runtime_unit: '天',
-  runtime: true,
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
   copyright: undefined,
-  ClickShowText: undefined,
-  medium_zoom: false,
-  fancybox: true,
+  lightbox: 'fancybox',
   Snackbar: undefined,
-  baiduPush: true,
-  highlightCopy: true,
-  highlightLang: true,
-  highlightShrink: 'false',
-  isFontAwesomeV5: false,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
   isPhotoFigcaption: false,
   islazyload: false,
   isanchor: false
-  
-}</script><script>var GLOBAL_CONFIG_SITE = { 
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '不会理发的托尼老师',
   isPost: false,
   isHome: true,
-  isSidebar: false  
-  }</script><noscript><style>
-#page-header {
-  opacity: 1
-}
-.justified-gallery img{
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 5.4.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-pencil"></i><span> 留言板</span></a></div></div></div></div><div id="body-wrap"><div class="full_page" id="nav" style="background-image: url(https://cdn.kulipoi.com/img/2.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">不会理发的托尼老师</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-pencil"></i><span> 留言板</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">不会理发的托尼老师</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/KuLiPoi/" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:i@nana.im" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="https://space.bilibili.com/7326605" target="_blank" title="Bilibili"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/05/31/hexo/" title="记一次Hexo的搭建">     <img class="post_bg" src="https://cdn.kulipoi.com/img/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次Hexo的搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/31/hexo/" title="记一次Hexo的搭建">记一次Hexo的搭建</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-05-31 00:12:43"><i class="fa fa-calendar" aria-hidden="true"></i>2021-05-31</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">上次写博客貌似是很多年前的事情了，最近发生的事情又多了起来，想重新记录自己的生活，和自己学习上的一些笔记。这次选择了Gitpage+hexo的方式，方便还省钱，这篇文章会记录我在搭建过程中遇到的一些问题和解释，其实也算是非常简单了
-在Github上创建个人仓库
-你的一个GItpage将仓库名命名为  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/05/21/hacktintosh-1/" title="卡特琳娜的调教日记 0x1">     <img class="post_bg" src="https://cdn.kulipoi.com/img/hackintosh1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="卡特琳娜的调教日记 0x1"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/21/hacktintosh-1/" title="卡特琳娜的调教日记 0x1">卡特琳娜的调教日记 0x1</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-21 08:24:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">这什么鬼名字啊卡特琳娜是哪位啊你为什么要调教她啊你是不是有怪癖啊
-你错了 Catalina是美国西海岸靠近洛杉矶22英里的一个小岛，当然也可以是一个人名。他也可以是 苹果公司的一个新系统代号为 Catalina
-其实黑苹果早就装好了，最近又帮我朋友装了一台。授人以鱼不如授人以渔，就趁机写个教程吧。「 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/12/centos/" title="一次迁移Minecraft服务器至Centos的记录">     <img class="post_bg" src="https://cdn.kulipoi.com/img/centos.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次迁移Minecraft服务器至Centos的记录"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/12/centos/" title="一次迁移Minecraft服务器至Centos的记录">一次迁移Minecraft服务器至Centos的记录</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-12 17:11:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">开始折腾时间来到了天津时间的22:30分，我是睡觉还是干点别的呢。好，这个Netdata好看的，可惜只有Linux上可以弄啊。好，把服务器换成Centos吧。这一折腾不要紧，一杆子就到了凌晨4点。我的头发！呜呜呜
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-31 17:03:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="https://cdn.kulipoi.com/css/index.min.css"><link rel="stylesheet" href="https://cdn.kulipoi.com/css/background.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">不会理发的托尼老师</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/21/hacktintosh-1/" title="卡特琳娜的调教日记 0x1">     <img class="post_bg" src="https://cdn.kulipoi.com/img/Hackintosh_Cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="卡特琳娜的调教日记 0x1"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/21/hacktintosh-1/" title="卡特琳娜的调教日记 0x1">卡特琳娜的调教日记 0x1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-21T00:24:00.000Z" title="发表于 2020-05-21 08:24:00">2020-05-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">其实黑苹果早就装好了，最近又帮我朋友装了一台。授人以鱼不如授人以渔，就趁机写个教程吧。「本文均是自己装机的个人理解，如果那里说的不对，欢迎指正」
+准备
+电脑硬件查看
+
+显卡如果你的显卡是N卡，那么你装黑苹果就只能止步于 High Sierra，因为老黄已经不再为10.13之后的系统更新驱动了，具体为什么，你可以参阅这篇文章，如果你的显卡是A卡，则可以参阅黑果小兵大神的A卡免驱列表。我们常见的 5700xt / vega64 / vega56/ rx 580 等均可免驱。
+
+网卡一般台式鸡的板载网卡都是免驱的，如果你是笔记本，则可以参阅这篇文章黑苹果机型维护清单。如果你是外置网卡，则需要看官方有没有对应的Macos驱动或者可以Google Wireless USB Adapter Clover
+
+硬盘我这里推荐是单独购入一块120g的固态硬盘，淘宝某些杂牌也就不到100块，你装起来开心又省力，何乐而不为。这里不再赘述如何将Mac和Windows装入同一个硬盘，可能后面会另外开文补充喔。
+
+其他
+
+准备一个8G以上的U盘「我的意思是16G」
+从网上下载EtcherTips：经过我的测试发现 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/05/12/centos/" title="一次迁移Minecraft服务器至Centos的记录">     <img class="post_bg" src="https://cdn.kulipoi.com/img/Centos_Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次迁移Minecraft服务器至Centos的记录"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/12/centos/" title="一次迁移Minecraft服务器至Centos的记录">一次迁移Minecraft服务器至Centos的记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-12T09:11:00.000Z" title="发表于 2020-05-12 17:11:00">2020-05-12</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">开始折腾时间来到了天津时间的22:30分，我是睡觉还是干点别的呢。好，这个Netdata好看的，可惜只有Linux上可以弄啊。好，把服务器换成Centos吧。这一折腾不要紧，一杆子就到了凌晨4点。我的头发！呜呜呜
 「喂，你跑题了 不是MInecraft服务器吗？」「雨女无瓜」
-安装Centos我这里 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/05/08/hexo-2/" title="为Gitpage自定义域名和优化">     <img class="post_bg" src="https://cdn.kulipoi.com/img/4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为Gitpage自定义域名和优化"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/08/hexo-2/" title="为Gitpage自定义域名和优化">为Gitpage自定义域名和优化</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-08 12:24:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">想给自己的Gitpage自定义域名吗？
+安装Centos我这里使用的是UltraISO，然后去Centos官方下载那个5G多的完整镜像。然后将镜像写入到U盘中。在Centos7之后安装会存在无法正确引导的问题，我这里也遇到了，也就是无法到达正常的GUI安装界面，在经过一段摸索之后我终于解决啦。
+
+修改引导在进入grub2界面的时候我们按”E”或者”Tab“进入编辑模式，将内核启动的参数修改为12345#你的镜像名字不一样肯定有些区别 没什么问题vmlinuz initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 rd.live.check quiet#修改为vmlinuz initrd=initrd.img linux dd quiet
+继续修改引导然后 Ctrl + X 继续引导，会 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/08/hexo-2/" title="为Gitpage自定义域名和优化">     <img class="post_bg" src="https://cdn.kulipoi.com/img/Hexo_Cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为Gitpage自定义域名和优化"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/08/hexo-2/" title="为Gitpage自定义域名和优化">为Gitpage自定义域名和优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-08T04:24:00.000Z" title="发表于 2020-05-08 12:24:00">2020-05-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">想给自己的Gitpage自定义域名吗？
 用Github仓库做图床？
 自定义域名
 在hexo根目录的_config.yml中我们先修改 url: yourdomain.com
 
 在Source文件夹内新建文件名为 CNAME 的文件，并将内容修改为你的域名，如 nana.im
 
-然后在Github你的 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Tony</div><div class="author-info__description">在忙要秃了啊</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">4</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">2</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KuLiPoi/" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:i@nana.im" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="https://space.bilibili.com/7326605" target="_blank" title="Bilibili"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="card-category-list">
-            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Hackintosh/"><span class="card-category-list-name">Hackintosh</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="card-category-list-name">奇怪的学习记录</span><span class="card-category-list-count">3</span></a></li>
-                       
-            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">4</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="1/2/2020 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Tony</div><div class="framework-info"><span>驱动 </span><a target="_blank" rel="noopener" href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
-if (subtitleEffect) { 
-  var typed = new Typed("#subtitle", {
-    strings: '不负韶华，不忘初心'.split(","),
-    startDelay: 300,
-    typeSpeed: 150,
-    loop: false,
-    backSpeed: 50
-  })
-} else {
-  document.getElementById("subtitle").innerHTML = '不负韶华，不忘初心'
-}</script></body></html>
+然后在Github你的仓库的Setting中拉到最下面有个 Github pages，填写你的自定义域名 点击 Save
+
+在自己的域名控制台下，修改解析记录。提示：A记录修改为「185.199.108.153  185.199.109.153  185.199.110.153  185.199.111.153」任意一个均可
+123@    A   185.199.108.153www CNAME &lt;username.github.io&gt;
+在上面的Setting中开启 Enforce HTTPS 选项，等待Github给你发布证书
+
+最后看到 Your site is published at &lt;yourdomain.com&gt; 就成功了
+
+
+加速图片访问根据我的观察，发现图片是拖慢国内地区 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/05/01/hexo/" title="记一次Hexo的搭建">     <img class="post_bg" src="https://cdn.kulipoi.com/img/Hexo_Cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次Hexo的搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/01/hexo/" title="记一次Hexo的搭建">记一次Hexo的搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-01T04:24:00.000Z" title="发表于 2020-05-01 12:24:00">2020-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">奇怪的学习记录</a></span></div><div class="content">这次选择了Gitpage+hexo的方式，方便还省钱，这篇文章会记录我在搭建过程中遇到的一些问题和解释，其实也算是非常简单了
+在Github上创建个人仓库
+你的一个GItpage将仓库名命名为 Username.github.io，然后初始化仓库，在Settings里面开启Gitpage选项
+
+你得第N个Gitpage直接将仓库命名为你想要的名字，不用加github.io「绑定域名和其他注意事项我会在另一篇文章中写出，日后会补链接在这里」
+
+
+安装环境配置
+安装xcode 「也不知道是不是必需品，我之前没有装也可以」
+使用homebrew安装git
+安装homebrew安装node
+
+安装hexo
+通过npm安装hexo sudo npm install -g hexo
+初始化Hexo npx hexo init &lt;你想要的目录存放Gitpage的目录&gt;
+生成静态页面 npx hexo g
+开启本地服务器npx hexo s
+
+更改主题
+安装主题git clone -b master https://github.com/jerryc127/hexo-theme-butte ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Tony</div><div class="author-info__description">在忙要秃了啊</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KuLiPoi"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/7326605" target="_blank" title="BiliBili"><i class="fab fa-youtube"></i></a><a class="social-icon" href="https://twitter.com/Sanmayakii" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://meet.kulipoi.com" target="_blank" title="Mastodon"><i class="fab fa-meetup"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">最近事情比较多，可能会文章会更新的慢一些了，是我懒了。🐷</div></div><div class="sticky_layout"><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-01-10T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-05-31T09:03:33.482Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Tony</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" target="_blank">津ICP备2021004032号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
