@@ -1,4 +1,5 @@
 https://kulipoi.com/2021/05/31/Hexo_Tencent/
 https://kulipoi.com/2020/05/21/Catalina_Install/
+https://kulipoi.com/2020/05/12/Centos_Minecraft/
 https://kulipoi.com/2020/05/08/Hexo_GitPage_Optimization/
 https://kulipoi.com/2020/05/01/Hexo_Gitpage/
