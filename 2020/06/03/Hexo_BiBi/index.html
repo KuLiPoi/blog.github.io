@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>为Hexo添加哔哔组件和主页滚动消息 | 不会理发的托尼老师</title><meta name="keywords" content="Hexo"><meta name="author" content="Tony"><meta name="copyright" content="Tony"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这个是Hexo系列的第四篇了，本来是想写点别的的，最近灵感有点枯竭了。所以 我们还是继续折腾Hexo吧。本次我们将为你的Hexo增加哔哔组件，本次安装将在Butterfly主题下进行操作，其他主题大同小异。 效果预览首页哔哔小组件 哔哔动态详情页 腾讯云相关内容配置环境配置 注册并登录[腾讯云开发CloudBase](小程序云开发特惠-小程序云开发首购活动- 腾讯云 (tencent.com))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为Hexo添加哔哔组件和主页滚动消息">
+<meta property="og:url" content="https://kulipoi.com/2020/06/03/Hexo_BiBi/index.html">
+<meta property="og:site_name" content="不会理发的托尼老师">
+<meta property="og:description" content="这个是Hexo系列的第四篇了，本来是想写点别的的，最近灵感有点枯竭了。所以 我们还是继续折腾Hexo吧。本次我们将为你的Hexo增加哔哔组件，本次安装将在Butterfly主题下进行操作，其他主题大同小异。 效果预览首页哔哔小组件 哔哔动态详情页 腾讯云相关内容配置环境配置 注册并登录[腾讯云开发CloudBase](小程序云开发特惠-小程序云开发首购活动- 腾讯云 (tencent.com))">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.kulipoi.com/img/hexo_bb.jpg">
+<meta property="article:published_time" content="2020-06-02T18:54:00.000Z">
+<meta property="article:modified_time" content="2020-06-02T18:54:00.000Z">
+<meta property="article:author" content="Tony">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.kulipoi.com/img/hexo_bb.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://kulipoi.com/2020/06/03/Hexo_BiBi/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?da60df8ec2b36faa3ee6dd8234ac9a59";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"这篇文章已经发表了","messageNext":"天了，其中某些内容可能已经过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '为Hexo添加哔哔组件和主页滚动消息',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-06-03 02:54:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="https://cdn.kulipoi.com/css/index.min.css"><link rel="stylesheet" href="https://cdn.kulipoi.com/css/background.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/bb/showbb_in_index.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sms"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 我的动态</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">不会理发的托尼老师</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 托尼和他的朋友们</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-sms"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 我的动态</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">为Hexo添加哔哔组件和主页滚动消息</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-06-02T18:54:00.000Z" title="发表于 2020-06-03 02:54:00">2020-06-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-06-02T18:54:00.000Z" title="更新于 2020-06-03 02:54:00">2020-06-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><p>这个是Hexo系列的第四篇了，<br>本来是想写点别的的，最近灵感有点枯竭了。<br>所以 我们还是继续折腾Hexo吧。<br>本次我们将为你的Hexo增加哔哔组件，本次安装将在Butterfly主题下进行操作，其他主题大同小异。</p>
+<h3 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h3><p>首页哔哔小组件<br><img src="C:\Users\Tony\AppData\Local\Microsoft\Windows\INetCache\IE\E6YCKWUW\bb1[1].png"></p>
+<p>哔哔动态详情页<br><img src="C:\Users\Tony\AppData\Local\Microsoft\Windows\INetCache\IE\DA7XERKH\bb2[1].png"></p>
+<h3 id="腾讯云相关内容配置"><a href="#腾讯云相关内容配置" class="headerlink" title="腾讯云相关内容配置"></a>腾讯云相关内容配置</h3><h4 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h4><ol>
+<li>注册并登录[腾讯云开发CloudBase](<a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/pro/cloudbase01">小程序云开发特惠-小程序云开发首购活动- 腾讯云 (tencent.com)</a>)</li>
+<li>进入<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/">控制台</a> ，按需新建环境，<br>选择空模板，上海地区，按量计费，环境名称随意，开启免费，立即开通<br><strong>免费资源有限，当免费资源耗尽届时会产生费用，如日访问量大于10000，请考虑付费套餐</strong></li>
+<li>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/env/login">登录授权</a>页面，打开 “匿名登录”</li>
+<li>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/env/safety">安全配置</a>页面，添加网站域名到 “安全域名”</li>
+<li>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/db/">数据库</a>页面，新建数据库，命名为talks，权限为 用户可读管理员可写</li>
+</ol>
+<h4 id="函数部署-bber"><a href="#函数部署-bber" class="headerlink" title="函数部署 - bber"></a>函数部署 - bber</h4><ol>
+<li><p>新建云函数<br>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a>页面，新建函数名为 “bber”，其余保持默认并创建，进入函数代码编辑页面，复制<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber/index.js">代码</a>内容覆盖至 index.js，修改预设的ServerKey，保存修改。</p>
+</li>
+<li><p>新建依赖包</p>
+<p>依旧在函数代码页面，新建文件 “package.json”，写入<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber/package.json">代码</a>，点击保存并安装依赖。</p>
+</li>
+<li><p>配置HTTP访问</p>
+<p>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/env/access">HTTP访问服务</a>页面，新建触发路径，触发路径默认为 /bber ，并关联你创建好的云函数即 bber。</p>
+</li>
+<li><p>待连接生成完毕后，打卡你的连接，即``https://你的连接/bber`，如果显示Key不匹配，即配置成功。</p>
+</li>
+</ol>
+<h4 id="函数部署-bb-talk"><a href="#函数部署-bb-talk" class="headerlink" title="函数部署 - bb-talk"></a>函数部署 - bb-talk</h4><ol>
+<li>新建云函数并命名为 bber-talk，将<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber-talk/index.js">代码</a>覆盖至 index.js。</li>
+<li>新建 package.json ，写入<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber-talk/package.json">代码</a>，保存并安装依赖。</li>
+</ol>
+<h4 id="函数部署-bb-list"><a href="#函数部署-bb-list" class="headerlink" title="函数部署 - bb-list"></a>函数部署 - bb-list</h4><ol>
+<li>新建云函数并命名为 bber-list，将<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber-list/index.js">代码</a>覆盖至 index.js。</li>
+<li>新建 package.json ，写入<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/zhheo/bber@main/bber-list/package.json">代码</a>，保存并安装依赖。</li>
+</ol>
+<h4 id="获取API地址"><a href="#获取API地址" class="headerlink" title="获取API地址"></a>获取API地址</h4><ol>
+<li>浏览器直接访问 <code>https://你的地址/bber?key=bber(云函数默认为bber)&amp;from=消息来源&amp;text=消息内容</code></li>
+<li>打开<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb/storage">云存储</a>页面，复制 bber-list.json 的临时连接 （这个连接总要用到，建议保存起来。）</li>
+</ol>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>我这里用的主题为 Butterfly ，其他主题大同小异。</p>
+<h4 id="新建PUG模板"><a href="#新建PUG模板" class="headerlink" title="新建PUG模板"></a>新建PUG模板</h4><p>在路径 <code>themes/butterfly/layout/includes/page</code>新建 bb.pug<br>并修改其中的头像链接和bber-list连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">link(rel=&#x27;stylesheet&#x27;, href=&#x27;https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/bb/bber.css&#x27;, type=&#x27;text/css&#x27;)</span><br><span class="line">style(type=&#x27;text/css&#x27;).</span><br><span class="line">  .timeline ul li::before&#123;</span><br><span class="line">  background-image: url(你的头像链接);</span><br><span class="line">  &#125;</span><br><span class="line">h1.page-title(style=&#x27;display: inline;&#x27;)= page.title</span><br><span class="line">#bber-loading</span><br><span class="line">#bber-tips(style=&#x27;color: var(--heo-secondtext);&#x27;)</span><br><span class="line">  | 只展示最近30条短文</span><br><span class="line">#bber</span><br><span class="line">  .js-pjax</span><br><span class="line">    script.</span><br><span class="line">      var bbapiurl = &quot;之前让你复制的bber-list连接&quot;</span><br><span class="line">    script(type=&#x27;text/javascript&#x27;, src=&#x27;https://cdn.jsdelivr.net/gh/zhheo/bber@main/heobber.js&#x27;, data-pjax=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加判断"><a href="#添加判断" class="headerlink" title="添加判断"></a>添加判断</h4><p>在路径 <code>themes/butterfly/layout</code>修改 page.pug</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">block content</span><br><span class="line">  #page</span><br><span class="line">    case page.type</span><br><span class="line">      when &#x27;tags&#x27;</span><br><span class="line">        include includes/page/tags.pug</span><br><span class="line">      when &#x27;link&#x27;</span><br><span class="line">        include includes/page/flink.pug</span><br><span class="line">      when &#x27;tlink&#x27;</span><br><span class="line">        include includes/page/tlink.pug</span><br><span class="line">      when &#x27;nflink&#x27;</span><br><span class="line">        include includes/page/nflink.pug</span><br><span class="line">      when &#x27;categories&#x27;</span><br><span class="line">        include includes/page/categories.pug</span><br><span class="line">      when &#x27;artitalk&#x27;</span><br><span class="line">        include includes/page/artitalk.pug</span><br><span class="line">      # 添加 注意代码缩进</span><br><span class="line">      when &#x27;bb&#x27;</span><br><span class="line">        include includes/page/bb.pug</span><br><span class="line">      default</span><br><span class="line">        include includes/page/default-page.pug</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加网页"><a href="#添加网页" class="headerlink" title="添加网页"></a>添加网页</h4><p>在路径 <code>Hexo/source</code>·新建 bb 文件夹，在文件夹中新建 index.md</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 哔哔页面</span><br><span class="line">date: 2021-06-01 14:30:30</span><br><span class="line">aside: false</span><br><span class="line">comments: false</span><br><span class="line">type: bb</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h4 id="编辑导航栏"><a href="#编辑导航栏" class="headerlink" title="编辑导航栏"></a>编辑导航栏</h4><p>如果 Hexo 版本5.0.0以上，编辑 Hexo 根目录下的 <code>_config.butterfly.yml</code><br>反之则编辑 <code>themes/butterfly/_config.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    # 添加新的导航栏</span><br><span class="line">    - 我的动态 || /bb/ || fas fa-bomb</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加首页滚动组件"><a href="#添加首页滚动组件" class="headerlink" title="添加首页滚动组件"></a>添加首页滚动组件</h4><p>在路径 <code>themes/butterfly/layout/includes</code>新建 bbTimeList.pug<br>并修改其中bber-list连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#bbTimeList.bbTimeList.container(onclick=`window.open(&#x27;/bb/&#x27;,&#x27;_self&#x27;)`)</span><br><span class="line">    bblogo(onclick=&quot;location=&#x27;/bb/&#x27;&quot;,title=&quot;哔哔&quot;,style=&quot;font-size: 2rem;&quot;)</span><br><span class="line">    #bbtalk.swiper-container</span><br><span class="line">        #bber-talk.swiper-wrapper</span><br><span class="line">    i.bber-gotobb.fas.fa-arrow-circle-right(onclick=&quot;location=&#x27;/bb/&#x27;&quot;,title=&quot;查看全文&quot;)</span><br><span class="line">.js-pjax</span><br><span class="line">    script.</span><br><span class="line">        var bbShortApiUrl = &quot;你的bber-list连接&quot;</span><br><span class="line">    script(src=&#x27;https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js&#x27;,data-pjax=&#x27;&#x27;)</span><br><span class="line">    script(src=&#x27;https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/bb/showbb_in_index.js&#x27;,data-pjax=&#x27;&#x27;,defer=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="将组件添加到主页"><a href="#将组件添加到主页" class="headerlink" title="将组件添加到主页"></a>将组件添加到主页</h4><p>在路径 <code>themes/butterfly/layout</code>修改 index.pug</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">block content</span><br><span class="line">  include ./includes/mixins/post-ui.pug</span><br><span class="line">  #recent-posts.recent-posts</span><br><span class="line">    # 新增条目 </span><br><span class="line">    include includes/bbTimeList.pug</span><br><span class="line">    +postUI</span><br><span class="line">    include includes/pagination.pug</span><br></pre></td></tr></table></figure>
+
+<h4 id="引入相关CSS"><a href="#引入相关CSS" class="headerlink" title="引入相关CSS"></a>引入相关CSS</h4><p>如果 Hexo 版本5.0.0以上，编辑 Hexo 根目录下的 <code>_config.butterfly.yml</code><br>反之则编辑 <code>themes/butterfly/_config.yml</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inject:</span><br><span class="line">  head:</span><br><span class="line">		- &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css&quot;&gt;</span><br><span class="line">		- &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/bb/showbb_in_index.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="检测成果"><a href="#检测成果" class="headerlink" title="检测成果"></a>检测成果</h3><p>快使用Hexo三连 <code>Hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </code>测试看看吧</p>
+<h3 id="发送哔哔的方法"><a href="#发送哔哔的方法" class="headerlink" title="发送哔哔的方法"></a>发送哔哔的方法</h3><ul>
+<li><p>IOS 端 </p>
+<p>使用Safari打开<a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/45292fa1e87145f6a35f8c4170a59e5e">连接</a>安装快捷指令，并修改其中的Api为你的bber-list连接</p>
+</li>
+<li><p>PC 端</p>
+<p>安装Utools，安装快捷指令，修改并导入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;features&quot;: &#123;</span><br><span class="line">        &quot;code&quot;: &quot;key_15gw45g5gf6&quot;,</span><br><span class="line">        &quot;explain&quot;: &quot;哔哔发射台&quot;,</span><br><span class="line">        &quot;cmds&quot;: [</span><br><span class="line">            &quot;发送哔哔&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;icon&quot;: &quot;logo/quickcommand.png&quot;,</span><br><span class="line">        &quot;platform&quot;: [</span><br><span class="line">            &quot;win32&quot;,</span><br><span class="line">            &quot;darwin&quot;,</span><br><span class="line">            &quot;linux&quot;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;program&quot;: &quot;quickcommand&quot;,</span><br><span class="line">    &quot;cmd&quot;: &quot;const request = require(&#x27;request&#x27;);\nvar input = encodeURIComponent(`&#123;&#123;subinput&#125;&#125;`)\n\nvar url = `你的连接/bber?key=你的ServerKey&amp;from=来源&amp;text=`+input\n \nrequest(url, &#123; json: true &#125;, (err, res, body) =&gt; &#123;\n  if (err) &#123; return console.log(err); &#125;\n  console.log(body.content);\n&#125;);&quot;,</span><br><span class="line">    &quot;output&quot;: &quot;notice&quot;,</span><br><span class="line">    &quot;hasSubInput&quot;: true,</span><br><span class="line">    &quot;scptarg&quot;: &quot;&quot;,</span><br><span class="line">    &quot;charset&quot;: &#123;</span><br><span class="line">        &quot;scriptCode&quot;: &quot;&quot;,</span><br><span class="line">        &quot;outputCode&quot;: &quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;tags&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.zhheo.com/p/a6947667.html">Hexo-Butterfly说说朋友圈适配（哔哔 for 腾讯云)</a></p>
+<p><a target="_blank" rel="noopener" href="https://immmmm.com/bb-by-wechat-pro/">「哔哔点啥」微信公众号 2.0</a></p>
+<p><a target="_blank" rel="noopener" href="https://bb.js.org/">BBtalk 中文文档</a></p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Tony</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://kulipoi.com/2020/06/03/Hexo_BiBi/">https://kulipoi.com/2020/06/03/Hexo_BiBi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://kulipoi.com" target="_blank">不会理发的托尼老师</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.kulipoi.com/img/hexo_bb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/31/Hexo_Tencent/"><img class="prev-cover" src="https://cdn.kulipoi.com/img/hexo_tencent.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">在腾讯云用宝塔配置&amp;升级 Hexo</div></div></a></div><div class="next-post pull-right"><a href="/2020/05/21/Catalina_Install/"><img class="next-cover" src="https://cdn.kulipoi.com/img/Hackintosh_Cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">黑苹果的味道牛顿和你都想知道 Catalina篇（一）</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.kulipoi.com/img/3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Tony</div><div class="author-info__description">在忙要秃了啊</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KuLiPoi"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:i@nana.im" target="_blank" title="Email"><i class="far fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">最近事情比较多，可能会文章会更新的慢一些了，是我懒了。🐷</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">效果预览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">腾讯云相关内容配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">2.1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%83%A8%E7%BD%B2-bber"><span class="toc-number">2.2.</span> <span class="toc-text">函数部署 - bber</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%83%A8%E7%BD%B2-bb-talk"><span class="toc-number">2.3.</span> <span class="toc-text">函数部署 - bb-talk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%83%A8%E7%BD%B2-bb-list"><span class="toc-number">2.4.</span> <span class="toc-text">函数部署 - bb-list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96API%E5%9C%B0%E5%9D%80"><span class="toc-number">2.5.</span> <span class="toc-text">获取API地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">主题配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAPUG%E6%A8%A1%E6%9D%BF"><span class="toc-number">3.1.</span> <span class="toc-text">新建PUG模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%A4%E6%96%AD"><span class="toc-number">3.2.</span> <span class="toc-text">添加判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%BD%91%E9%A1%B5"><span class="toc-number">3.3.</span> <span class="toc-text">添加网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">3.4.</span> <span class="toc-text">编辑导航栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%A6%96%E9%A1%B5%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">3.5.</span> <span class="toc-text">添加首页滚动组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E7%BB%84%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%BB%E9%A1%B5"><span class="toc-number">3.6.</span> <span class="toc-text">将组件添加到主页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E7%9B%B8%E5%85%B3CSS"><span class="toc-number">3.7.</span> <span class="toc-text">引入相关CSS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%88%90%E6%9E%9C"><span class="toc-number">4.</span> <span class="toc-text">检测成果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E5%93%94%E5%93%94%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">发送哔哔的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">6.</span> <span class="toc-text">参考文档</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Tony</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a><br>
+<a href="https://beian.miit.gov.cn/" target="_blank">津ICP备2021004032号</a>
+<img src="https://cdn.kulipoi.com/img/beian.png">
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12010402001411" target="_blank">津公网安备 12010402001411号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'twikoo-3gjbot6a485c259b',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'twikoo-3gjbot6a485c259b',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
